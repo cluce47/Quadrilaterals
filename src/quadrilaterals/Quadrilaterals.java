@@ -39,7 +39,11 @@ public class Quadrilaterals {
     public void setWidth(double newWidth) {
         this.width = newWidth;
     }
-  
+    
+    public double area(double dim1, double dim2){
+        return dim1*dim2;
+    }
+            
     private static double getValue(String instruction){
         System.out.print(instruction);
         Scanner in = new Scanner(System.in);
@@ -65,8 +69,11 @@ public class Quadrilaterals {
         Quadrilaterals quad1 = new Quadrilaterals();
         quad1.setLength(getValue("What is the length? "));
         quad1.setWidth(getValue("What is the width? "));
+        System.out.println("The rectangle area is "+quad1.area(quad1.getLength(), quad1.getWidth()));
         
-        
+        Square sq1 = new Square();
+        sq1.setLength(getValue("What is the side length? "));
+        System.out.println("The square area is "+sq1.area(sq1.getLength(), sq1.getLength()));
     }
     
 }
