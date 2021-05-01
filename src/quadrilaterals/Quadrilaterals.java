@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package quadrilaterals;
 
 /**
@@ -10,7 +5,7 @@ package quadrilaterals;
  * @author Carol
  */
 import java.util.Scanner;
-import java.util.InputMismatchException;
+import java.lang.NumberFormatException;
 
 public class Quadrilaterals {
     /**
@@ -45,41 +40,32 @@ public class Quadrilaterals {
         this.width = newWidth;
     }
   
-//    public double getValue(String instruction){
-//        System.out.print(instruction);
-//        Scanner input = new Scanner(System.in);
-//        double val;
-//        while (true){
-//            try{
-//                val=input.nextDouble();
-//                break;
-//            }
-//            catch (InputMismatchException err){
-//                input.next();
-//                System.out.print("Not a number, try again! "+instruction);
-//            }
-//        }
-//        return val;
-//    }
+    private static double getValue(String instruction){
+        System.out.print(instruction);
+        Scanner in = new Scanner(System.in);
+        String strNumber;
+        do{
+            strNumber=in.next();
+        }while (!isDouble(strNumber));
+        return Double.parseDouble(strNumber);
+    }
     
     private static boolean isDouble(String toCheck){
         try {
             double value = Double.parseDouble(toCheck);
             return true;
         }
-        catch(InputMismatchException err){
+        catch(NumberFormatException err){
             System.out.println("Not a number, try again please.");
             return false;
         }
     }
     
     public static void main(String[] args) {
-        // TODO code application logic here
         Quadrilaterals quad1 = new Quadrilaterals();
-        String strNumber="";
-        do{
-            
-        }while (isDouble(strNumber));
+        quad1.setLength(getValue("What is the length? "));
+        quad1.setWidth(getValue("What is the width? "));
+        
         
     }
     
