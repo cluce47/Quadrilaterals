@@ -10,4 +10,8 @@ public class Parallelogram extends Quadrilaterals{
         height=0.0;
     }
     
+    public double perimeter(){
+        return 2*this.length+2*this.width;
+    }
+    
 }
