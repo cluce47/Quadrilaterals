@@ -10,4 +10,8 @@ public class Square extends Quadrilaterals{
         side=0.0;
     }
     
+    public double perimeter(){
+        return 4*side;
+    }
+    
 }
